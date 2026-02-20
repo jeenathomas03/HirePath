@@ -1,70 +1,108 @@
+
 .login-page {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  background: linear-gradient(135deg, #1d976c, #93f9b9);
+  font-family: Arial, sans-serif;
 }
 
+/* Login card */
 .login-card {
-  background: white;
+  background: #fff;
   padding: 35px;
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
+/* Title */
 .login-card h2 {
-  text-align: center;
   margin-bottom: 5px;
+  color: #333;
 }
 
+/* Subtitle */
 .subtitle {
-  text-align: center;
-  color: gray;
+  font-size: 14px;
+  color: #777;
   margin-bottom: 20px;
 }
 
+/* Form group */
 .form-group {
+  text-align: left;
   margin-bottom: 15px;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  margin-top: 5px;
+/* Labels */
+.form-group label {
+  font-size: 14px;
+  color: #444;
 }
 
-button {
+/* Inputs */
+.form-group input {
   width: 100%;
   padding: 10px;
-  background: #3a7bd5;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Input focus effect */
+.form-group input:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.4);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #1d976c;
   color: white;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
   font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #2a5fb8;
+  background: #157a58;
 }
 
+/* Disabled button */
+button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* Error message */
 .error {
   color: red;
-  text-align: center;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
+/* Register link */
 .register-link {
-  text-align: center;
   margin-top: 15px;
+  font-size: 14px;
 }
 
 .register-link span {
-  color: #3a7bd5;
+  color: #1d976c;
   cursor: pointer;
   font-weight: bold;
+}
+
+.register-link span:hover {
+  text-decoration: underline;
 }

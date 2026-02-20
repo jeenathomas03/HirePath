@@ -4,70 +4,117 @@ import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 function Register() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setError("");
+
+    if (formData.password !== formData.confirmPassword) {
+      return setError("Passwords do not match");
+    }
+
+    setLoading(true);
 
     try {
       await axios.post("http://localhost:5000/api/auth/register", {
-        name,
-        email,
-        password,
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
       });
 
       alert("Registration successful!");
-      navigate("/");
+      navigate("/login");
     } catch (error) {
-      alert("Registration failed");
+      setError(error.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="register-container">
-      <h2>Create Account - HirePath</h2>
+    <div className="register-page">
+      <div className="register-card">
+        <h2>Create Account</h2>
+        <p className="subtitle">Join HirePath and start your career journey</p>
 
-      <form onSubmit={handleRegister}>
-        <input
-          type="text"
-          placeholder="Enter name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+        {error && <p className="error">{error}</p>}
 
-        <input
-          type="email"
-          placeholder="Enter email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <form onSubmit={handleRegister}>
+          <div className="form-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <input
-          type="password"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-        <button type="submit">Register</button>
-      </form>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Create password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-      <p>
-        Already have an account?{" "}
-        <span
-          style={{ color: "blue", cursor: "pointer" }}
-          onClick={() => navigate("/login")}
-        >
-          Login
-        </span>
-      </p>
+          <div className="form-group">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Creating Account..." : "Register"}
+          </button>
+        </form>
+
+        <p className="login-link">
+          Already have an account?{" "}
+          <span onClick={() => navigate("/login")}>Login</span>
+        </p>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -78,7 +79,7 @@ function Login() {
         </form>
 
         <p className="register-link">
-          Don't have an account? <span onClick={() => navigate("/register")}>Register</span>
+          Don't have an account? <span onClick={() => navigate("/")}>Register</span>
         </p>
       </div>
     </div>
