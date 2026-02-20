@@ -17,7 +17,6 @@ exports.register = async (req, res) => {
   res.json({ message: "User registered" });
 };
 
-// Login
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
