@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import logo from "../assets/hirepath-logo.png"; // import logo
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -28,7 +29,6 @@ function Login() {
     try {
       const res = await axios.post("http://localhost:5000/api/auth/login", formData);
 
-      // Save token
       localStorage.setItem("token", res.data.token);
 
       alert("Login successful!");
@@ -43,6 +43,10 @@ function Login() {
   return (
     <div className="login-page">
       <div className="login-card">
+
+        {/* Logo */}
+        <img src={logo} alt="HirePath Logo" className="logo" />
+
         <h2>HirePath Login</h2>
         <p className="subtitle">Welcome back! Please login to continue.</p>
 

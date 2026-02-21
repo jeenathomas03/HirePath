@@ -9,7 +9,7 @@
   .register-card {
     background: white;
     padding: 35px;
-    width: 380px;
+    width: 480px;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   }
@@ -22,7 +22,7 @@
   .subtitle {
     text-align: center;
     color: gray;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   
   .form-group {
@@ -68,3 +68,10 @@
     cursor: pointer;
     font-weight: bold;
   }
+  .logo {
+    width: 100px;
+    height: 90px;
+    display: block;
+    margin: 0 auto 4px auto;
+  }
+  

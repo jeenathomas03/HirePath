@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import logo from "../assets/hirepath-logo.png"; 
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -51,6 +52,7 @@ function Register() {
   return (
     <div className="register-page">
       <div className="register-card">
+      <img src={logo} alt="HirePath Logo" className="logo" />
         <h2>Create Account</h2>
         <p className="subtitle">Join HirePath and start your career journey</p>
 
