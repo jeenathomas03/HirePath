@@ -83,7 +83,7 @@ function Login() {
         </form>
 
         <p className="register-link">
-          Don't have an account? <span onClick={() => navigate("/")}>Register</span>
+          Don't have an account? <span onClick={() => navigate("/reg")}>Register</span>
         </p>
       </div>
     </div>
