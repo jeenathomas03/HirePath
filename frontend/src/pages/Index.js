@@ -15,7 +15,7 @@ function Index() {
 
         <div className="nav-buttons">
           <a href="/login" className="login-btn">Login</a>
-          <a href="/register" className="register-btn">Register</a>
+          <a href="/reg" className="register-btn">Register</a>
         </div>
       </nav>
 
