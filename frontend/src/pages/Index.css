@@ -2,13 +2,30 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
   }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+  }
   
   /* Navbar */
   .navbar {
     display: flex;
     justify-content: space-between;
     padding: 15px 40px;
-    background: #1f3c88;
+    background: #157a58;
     color: white;
   }
   
@@ -63,7 +80,7 @@ body {
     background: white;
     padding: 12px 25px;
     text-decoration: none;
-    color: #1f3c88;
+    color: #1d976c;
     border-radius: 5px;
   }
   
@@ -85,7 +102,7 @@ body {
   
   /* Footer */
   .footer {
-    background: #1f3c88;
+    background: #1d976c;
     color: white;
     text-align: center;
     padding: 15px;

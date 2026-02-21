@@ -1,5 +1,6 @@
 import React from "react";
 import "./Index.css";
+import logo from "../assets/hirepath-logo.png";
 
 function Index() {
   return (
@@ -7,7 +8,10 @@ function Index() {
 
       {/* Navigation */}
       <nav className="navbar">
-        <div className="logo">HirePath</div>
+        <div className="logo-section">
+          <img src={logo} alt="HirePath Logo" className="logo-img" />
+          <span className="logo-text">HirePath</span>
+        </div>
 
         <div className="nav-buttons">
           <a href="/login" className="login-btn">Login</a>
