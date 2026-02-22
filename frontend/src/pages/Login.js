@@ -32,7 +32,7 @@ function Login() {
       localStorage.setItem("token", res.data.token);
 
       alert("Login successful!");
-      navigate("/dashboard");
+      navigate("/home");
     } catch (err) {
       setError(err.response?.data?.message || "Invalid email or password");
     } finally {
