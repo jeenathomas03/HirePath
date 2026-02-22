@@ -19,41 +19,75 @@ function Index() {
         </div>
       </nav>
 
-      {/* Website Details */}
+      {/* Hero Section */}
       <section className="hero">
-        <h1>Welcome to HirePath</h1>
+        <h1>Find Your Dream Job with HirePath</h1>
         <p>
-          HirePath is a smart job portal that helps job seekers find the
-          right opportunities and recruiters discover talented candidates.
+          HirePath connects talented job seekers with top companies.
+          Build your resume, apply for jobs, and track your applications easily.
         </p>
 
         <div className="hero-buttons">
-          <a href="/login" className="btn-primary">Get Started</a>
-          <a href="/register" className="btn-secondary">Create Account</a>
+          <a href="/reg" className="btn-primary">Get Started</a>
+          <a href="/login" className="btn-secondary">Login</a>
         </div>
+      </section>
+
+      {/* About Section */}
+      <section className="about">
+        <h2>About HirePath</h2>
+        <p>
+          HirePath is a smart job portal platform designed to help freshers and
+          experienced professionals find the right career opportunities.
+          Recruiters can easily discover talented candidates and manage hiring.
+        </p>
       </section>
 
       {/* Features */}
       <section className="features">
         <div className="feature">
           <h3>Build Resume</h3>
-          <p>Create professional resumes easily.</p>
+          <p>Create professional resumes in minutes.</p>
         </div>
 
         <div className="feature">
           <h3>Apply for Jobs</h3>
-          <p>Find and apply for jobs quickly.</p>
+          <p>Find jobs that match your skills and apply instantly.</p>
         </div>
 
         <div className="feature">
           <h3>Track Applications</h3>
-          <p>Monitor your job application status.</p>
+          <p>Monitor your job applications and status updates.</p>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* CTA */}
+      <section className="cta">
+        <h2>Start Your Career Journey Today</h2>
+        <p>Join HirePath and discover opportunities that match your skills.</p>
+        <a href="/reg" className="btn-primary">Create Free Account</a>
+      </section>
+
+      {/* Footer with Contact */}
       <footer className="footer">
-        <p>© 2026 HirePath | Job Portal System</p>
+        <div className="footer-container">
+
+          <div className="footer-about">
+            <h3>HirePath</h3>
+            <p>Your smart job portal to connect job seekers and recruiters.</p>
+          </div>
+
+          <div className="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@hirepath.com</p>
+            <p>Phone: +91 9494949494</p>
+          </div>
+
+        </div>
+
+        <div className="footer-bottom">
+          © 2026 HirePath | Job Portal System
+        </div>
       </footer>
 
     </div>
