@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
-import ProtectedRoute from "./components/ProtectedRoute";
+// import Home from "./pages/Home";
+// import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -12,8 +12,7 @@ function App() {
         <Route path="/" element={<Index />} />
         <Route path="/reg" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home"  element={<ProtectedRoute><Home /></ProtectedRoute> }/>
-
+        {/* <Route path="/home"  element={<ProtectedRoute><Home /></ProtectedRoute> }/> */}
       </Routes>
     </BrowserRouter>
   );
