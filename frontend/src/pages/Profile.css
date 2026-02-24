@@ -1,0 +1,25 @@
+.profile-page {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .profile-form {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .profile-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .profile-form button {
+    padding: 12px;
+    background: #157a58;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }

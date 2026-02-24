@@ -23,6 +23,7 @@ function Navbar() {
       <ul className="nav-links">
         <li onClick={() => navigate("/home")}>Home</li>
         <li onClick={() => navigate("/jobs")}>Jobs</li>
+        <li onClick={() => navigate("/profile")}>Profile</li>
         <li onClick={() => navigate("/resume")}>Resume</li>
       </ul>
 

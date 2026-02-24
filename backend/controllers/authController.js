@@ -32,3 +32,12 @@ exports.login = async (req, res) => {
 
   res.json({ token });
 };
+router.post("/profile", authMiddleware, async (req, res) => {
+  const profile = new Profile({
+    userId: req.user.id,
+    ...req.body
+  });
+
+  await profile.save();
+  res.json({ message: "Profile saved" });
+});
