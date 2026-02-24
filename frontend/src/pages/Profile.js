@@ -30,7 +30,7 @@ function Profile() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/profile",
+        "http://localhost:5000/api/auth/profile",
         profile,
         {
           headers: {
