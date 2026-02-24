@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Profile = require("../models/Profile");
 
 // REGISTER
 exports.register = async (req, res) => {
@@ -75,23 +76,61 @@ exports.login = async (req, res) => {
 
 exports.addProfile = async (req, res) => {
   try {
-    const { fullName, phone, location, experience, skills } = req.body;
-
-    const profile = {
-      fullName,
+    const {
+      name,
+      email,
       phone,
       location,
-      experience,
       skills,
-      userId: req.user.id
-    };
+      experience,
+      education
+    } = req.body;
+
+    const profile = new Profile({
+      userId: req.user.id,
+      name,
+      email,
+      phone,
+      location,
+      skills,
+      experience,
+      education
+    });
+
+    await profile.save();
 
     res.json({
-      message: "Profile added successfully",
+      message: "Profile saved successfully",
       profile
     });
 
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Server error" });
+  }
+};
+exports.addProfile = async (req, res) => {
+  try {
+    const { fullName, phone, location, skills, experience, education } = req.body;
+
+    const profile = new Profile({
+      userId: req.user.id,
+      fullName,
+      phone,
+      location,
+      skills,
+      experience,
+      education,
+    });
+
+    await profile.save();
+
+    res.status(201).json({
+      message: "Profile saved successfully",
+      profile,
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };
