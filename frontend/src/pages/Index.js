@@ -61,12 +61,6 @@ function Index() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="cta">
-        <h2>Start Your Career Journey Today</h2>
-        <p>Join HirePath and discover opportunities that match your skills.</p>
-        <a href="/reg" className="btn-primary">Create Free Account</a>
-      </section>
 
       {/* Footer with Contact */}
       <footer className="footer">
