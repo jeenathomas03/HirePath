@@ -2,9 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #157a58;
+  background: white;
   padding: 12px 40px;
-  color: white;
+  color: #157a58;
 }
 
 .logo-section {
