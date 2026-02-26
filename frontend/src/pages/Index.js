@@ -6,18 +6,7 @@ function Index() {
   return (
     <div className="index-container">
 
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="logo-section">
-          <img src={logo} alt="HirePath Logo" className="logo-img" />
-          <span className="logo-text">HirePath</span>
-        </div>
-
-        <div className="nav-buttons">
-          <a href="/login" className="login-btn">Login</a>
-          <a href="/reg" className="register-btn">Register</a>
-        </div>
-      </nav>
+      
 
       {/* Hero Section */}
       <section className="hero">
