@@ -12,13 +12,35 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* Public Pages */}
         <Route path="/" element={<Index />} />
-        <Route path="/reg" element={<Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Recruiterregister" element={<RecruiterRegister />} />
-        <Route path="/Recruiterlogin" element={<RecruiterLogin />} />
-        <Route path="/home"  element={<ProtectedRoute><Home /></ProtectedRoute> }/>
-        <Route path="/profile"  element={<ProtectedRoute><Profile /></ProtectedRoute> }/>
+
+        {/* Recruiter Pages */}
+        <Route path="/recruiter/register" element={<RecruiterRegister />} />
+        <Route path="/recruiter/login" element={<RecruiterLogin />} />
+
+        {/* Protected Pages */}
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+
       </Routes>
     </BrowserRouter>
   );
