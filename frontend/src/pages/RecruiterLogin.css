@@ -1,0 +1,50 @@
+.recruiter-login-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f5f45, #157a58);
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-box {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  .login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .login-box button {
+    width: 100%;
+    padding: 12px;
+    background: #0f5f45;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-box button:hover {
+    background: #0c4a37;
+  }
+  
+  .note {
+    margin-top: 15px;
+    font-size: 12px;
+    color: gray;
+  }
