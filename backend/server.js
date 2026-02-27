@@ -9,6 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 // MongoDB connection
 mongoose.connect("mongodb://127.0.0.1:27017/hirepath")
   .then(() => console.log("MongoDB Connected"))
@@ -17,6 +18,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/hirepath")
 // routes
 const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
+
+app.use("/api/recruiter", recruiterRoutes);
 
 // server
 app.listen(5000, () => {

@@ -9,6 +9,7 @@ function RecruiterRegister() {
     password: "",
   });
 
+  // Handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -16,6 +17,7 @@ function RecruiterRegister() {
     });
   };
 
+  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -35,13 +37,23 @@ function RecruiterRegister() {
 
       if (response.ok) {
         alert("Recruiter registered successfully");
-        window.location.href = "/recruiter-login";
+
+        // Clear form
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          password: "",
+        });
+
+        // Redirect to login
+        window.location.href = "/recruiter/login";
       } else {
-        alert(data.message);
+        alert(data.message || "Registration failed");
       }
     } catch (error) {
-      console.error(error);
-      alert("Registration failed");
+      console.error("Error:", error);
+      alert("Registration failed. Please try again.");
     }
   };
 
@@ -55,6 +67,7 @@ function RecruiterRegister() {
             type="text"
             name="name"
             placeholder="Full Name"
+            value={formData.name}
             onChange={handleChange}
             required
           />
@@ -63,6 +76,7 @@ function RecruiterRegister() {
             type="text"
             name="company"
             placeholder="Company Name"
+            value={formData.company}
             onChange={handleChange}
             required
           />
@@ -71,6 +85,7 @@ function RecruiterRegister() {
             type="email"
             name="email"
             placeholder="Email Address"
+            value={formData.email}
             onChange={handleChange}
             required
           />
@@ -79,6 +94,7 @@ function RecruiterRegister() {
             type="password"
             name="password"
             placeholder="Password"
+            value={formData.password}
             onChange={handleChange}
             required
           />
@@ -87,8 +103,8 @@ function RecruiterRegister() {
         </form>
 
         <p>
-          Already have an account?  
-          <a href="/recruiter-login"> Login here</a>
+          Already have an account?{" "}
+          <a href="/recruiter/login">Login here</a>
         </p>
       </div>
     </div>
