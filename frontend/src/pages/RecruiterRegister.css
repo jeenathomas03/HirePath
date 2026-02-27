@@ -1,0 +1,48 @@
+.recruiter-register-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f5f45, #157a58);
+  font-family: Arial, sans-serif;
+}
+
+.register-box {
+  background: white;
+  padding: 40px;
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+}
+
+.register-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background: #0f5f45;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.register-box button:hover {
+  background: #0c4a37;
+}
+
+.register-box p {
+  margin-top: 15px;
+  font-size: 14px;
+}
