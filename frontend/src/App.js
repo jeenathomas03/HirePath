@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import RecruiterRegister from "./pages/LogiRecruiterRegistern";
+import RecruiterRegister from "./pages/RecruiterRegister";
 import RecruiterLogin from "./pages/RecruiterLogin";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
