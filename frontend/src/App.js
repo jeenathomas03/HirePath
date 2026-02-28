@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import RecruiterRegister from "./pages/RecruiterRegister";
-import RecruiterLogin from "./pages/RecruiterLogin";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Index from "./user/pages/Index";
+import Register from "./user/pages/Register";
+import Login from "./user/pages/Login";
+import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
+import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
+import Home from "./user/pages/Home";
+import Profile from "./user/pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
