@@ -3,13 +3,16 @@ import "./RecruiterRegister.css";
 
 function RecruiterRegister() {
   const [formData, setFormData] = useState({
-    name: "",
-    company: "",
+    hrName: "",
+    companyName: "",
     email: "",
+    phone: "",
+    companyRegNumber: "",
+    website: "",
+    address: "",
     password: "",
   });
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -17,7 +20,6 @@ function RecruiterRegister() {
     });
   };
 
-  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -36,24 +38,25 @@ function RecruiterRegister() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Recruiter registered successfully");
+        alert(
+          "Registration submitted. Waiting for admin approval."
+        );
 
-        // Clear form
         setFormData({
-          name: "",
-          company: "",
+          hrName: "",
+          companyName: "",
           email: "",
+          phone: "",
+          companyRegNumber: "",
+          website: "",
+          address: "",
           password: "",
         });
-
-        // Redirect to login
-        window.location.href = "/recruiter/login";
       } else {
-        alert(data.message || "Registration failed");
+        alert(data.message);
       }
     } catch (error) {
-      console.error("Error:", error);
-      alert("Registration failed. Please try again.");
+      alert("Registration failed");
     }
   };
 
@@ -65,18 +68,18 @@ function RecruiterRegister() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="name"
-            placeholder="Full Name"
-            value={formData.name}
+            name="hrName"
+            placeholder="HR Name"
+            value={formData.hrName}
             onChange={handleChange}
             required
           />
 
           <input
             type="text"
-            name="company"
+            name="companyName"
             placeholder="Company Name"
-            value={formData.company}
+            value={formData.companyName}
             onChange={handleChange}
             required
           />
@@ -84,8 +87,43 @@ function RecruiterRegister() {
           <input
             type="email"
             name="email"
-            placeholder="Email Address"
+            placeholder="Company Email"
             value={formData.email}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="text"
+            name="companyRegNumber"
+            placeholder="Company Registration Number"
+            value={formData.companyRegNumber}
+            onChange={handleChange}
+            required
+          />
+
+          <input
+            type="text"
+            name="website"
+            placeholder="Company Website"
+            value={formData.website}
+            onChange={handleChange}
+          />
+
+          <input
+            type="text"
+            name="address"
+            placeholder="Company Address"
+            value={formData.address}
             onChange={handleChange}
             required
           />
@@ -101,11 +139,6 @@ function RecruiterRegister() {
 
           <button type="submit">Register</button>
         </form>
-
-        <p>
-          Already have an account?{" "}
-          <a href="/recruiter/login">Login here</a>
-        </p>
       </div>
     </div>
   );
