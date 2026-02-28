@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import "./Profile.css";
 
 function Profile() {

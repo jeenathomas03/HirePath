@@ -1,6 +1,6 @@
 import React from "react";
 import "./Index.css";
-import logo from "../assets/hirepath-logo.png";
+import logo from "../../assets/hirepath-logo.png";
 
 function Index() {
   return (

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import logo from "../assets/hirepath-logo.png"; // import logo
+import logo from "../../assets/hirepath-logo.png";
 
 function Login() {
   const [formData, setFormData] = useState({
