@@ -21,6 +21,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/resume-builder" element={<ResumeBuilder />} />
+        <Route path="/interview-prep" element={<InterviewPrep />} />
 
         {/* Recruiter Pages */}
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
