@@ -8,6 +8,7 @@ import Home from "./user/pages/Home";
 import Profile from "./user/pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ResumeBuilder from "./pages/ResumeBuilder";
+import InterviewPrep from "./pages/InterviewPrep";
 
 
 function App() {
