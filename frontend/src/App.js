@@ -7,6 +7,8 @@ import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
 import Home from "./user/pages/Home";
 import Profile from "./user/pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ResumeBuilder from "./pages/ResumeBuilder";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="/" element={<Index />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/resume-builder" element={<ResumeBuilder />} />
 
         {/* Recruiter Pages */}
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
