@@ -24,7 +24,9 @@ function Navbar() {
         <li onClick={() => navigate("/home")}>Home</li>
         <li onClick={() => navigate("/jobs")}>Jobs</li>
         <li onClick={() => navigate("/profile")}>Profile</li>
-        <li onClick={() => navigate("/resume")}>Resume</li>
+        <li onClick={() => navigate("/resume-builder")}>Build Resume</li>
+        <li onClick={() => navigate("/interview-prep")}>Interview</li>
+        
       </ul>
 
       <div className="nav-right">

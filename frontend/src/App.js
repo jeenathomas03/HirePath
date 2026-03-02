@@ -18,33 +18,17 @@ function App() {
 
         {/* Public Pages */}
         <Route path="/" element={<Index />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/reg" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/resume-builder" element={<ResumeBuilder />} />
         <Route path="/interview-prep" element={<InterviewPrep />} />
+        <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>}/>
+        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
 
         {/* Recruiter Pages */}
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
 
-        {/* Protected Pages */}
-        <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
 
       </Routes>
     </BrowserRouter>

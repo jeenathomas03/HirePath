@@ -85,20 +85,6 @@ function Home() {
         </div>
       </div>
 
-      {/* Career Tools Section */}
-      <div className="career-section">
-        <h2>Boost Your Career</h2>
-
-        <div className="career-buttons">
-          <Link to="/resume-builder">
-            <button className="career-btn">Build Resume</button>
-          </Link>
-
-          <Link to="/interview-prep">
-            <button className="career-btn">Prepare for Interview</button>
-          </Link>
-        </div>
-      </div>
 
       {/* Job Cards */}
       <div className="job-container">
