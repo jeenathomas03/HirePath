@@ -15,21 +15,20 @@ function Home() {
 
   const token = localStorage.getItem("token");
 
-  // Fetch jobs from backend
   useEffect(() => {
-    fetchJobs();
-  }, []);
+    const fetchJobs = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/jobs", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setJobs(res.data);
+      } catch (error) {
+        console.log("Error fetching jobs");
+      }
+    };
 
-  const fetchJobs = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/api/jobs", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setJobs(res.data);
-    } catch (error) {
-      console.log("Error fetching jobs");
-    }
-  };
+    fetchJobs();
+  }, [token]);
 
   const handleChange = (e) => {
     setSearch({
