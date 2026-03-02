@@ -7,8 +7,8 @@ import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
 import Home from "./user/pages/Home";
 import Profile from "./user/pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
-import ResumeBuilder from "./pages/ResumeBuilder";
-import InterviewPrep from "./pages/InterviewPrep";
+import ResumeBuilder from "./user/pages/ResumeBuilder";
+import InterviewPrep from "./user/pages/InterviewPrep";
 
 
 function App() {

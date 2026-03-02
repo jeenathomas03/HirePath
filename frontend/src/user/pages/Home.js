@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import "./Home.css";
@@ -38,10 +39,11 @@ function Home() {
   };
 
   const handleSearch = () => {
-    const filtered = jobs.filter((job) =>
-      job.title.toLowerCase().includes(search.job.toLowerCase()) &&
-      job.location.toLowerCase().includes(search.location.toLowerCase()) &&
-      job.experience.toLowerCase().includes(search.experience.toLowerCase())
+    const filtered = jobs.filter(
+      (job) =>
+        job.title.toLowerCase().includes(search.job.toLowerCase()) &&
+        job.location.toLowerCase().includes(search.location.toLowerCase()) &&
+        job.experience.toLowerCase().includes(search.experience.toLowerCase())
     );
     setJobs(filtered);
   };
@@ -84,6 +86,21 @@ function Home() {
         </div>
       </div>
 
+      {/* Career Tools Section */}
+      <div className="career-section">
+        <h2>Boost Your Career</h2>
+
+        <div className="career-buttons">
+          <Link to="/resume-builder">
+            <button className="career-btn">Build Resume</button>
+          </Link>
+
+          <Link to="/interview-prep">
+            <button className="career-btn">Prepare for Interview</button>
+          </Link>
+        </div>
+      </div>
+
       {/* Job Cards */}
       <div className="job-container">
         {jobs.length === 0 ? (
@@ -92,9 +109,15 @@ function Home() {
           jobs.map((job) => (
             <div className="job-card" key={job._id}>
               <h3>{job.title}</h3>
-              <p><strong>Company:</strong> {job.company}</p>
-              <p><strong>Location:</strong> {job.location}</p>
-              <p><strong>Experience:</strong> {job.experience}</p>
+              <p>
+                <strong>Company:</strong> {job.company}
+              </p>
+              <p>
+                <strong>Location:</strong> {job.location}
+              </p>
+              <p>
+                <strong>Experience:</strong> {job.experience}
+              </p>
 
               <button onClick={() => sendInterest(job._id)}>
                 Send Interest
