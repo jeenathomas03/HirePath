@@ -30,6 +30,8 @@ function App() {
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
 
+        
+        <Route path="/admin-approve" element={<AdminApprove />} />
 
       </Routes>
     </BrowserRouter>
