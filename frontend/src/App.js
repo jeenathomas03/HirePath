@@ -2,13 +2,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./user/pages/Index";
 import Register from "./user/pages/Register";
 import Login from "./user/pages/Login";
-import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
-import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
 import Home from "./user/pages/Home";
 import Profile from "./user/pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ResumeBuilder from "./user/pages/ResumeBuilder";
 import InterviewPrep from "./user/pages/InterviewPrep";
+/* admin pages */
+import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
+import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
+/* admin pages */
 import AdminApprove from "./user/pages/AdminApprove";
 
 
@@ -26,11 +28,11 @@ function App() {
         <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>}/>
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
 
-        {/* Recruiter Pages */}
+        {/* Recruiter Pages */ }
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
 
-        
+        {/* admin pages */}
         <Route path="/admin-approve" element={<AdminApprove />} />
 
       </Routes>
