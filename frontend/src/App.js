@@ -11,6 +11,7 @@ import InterviewPrep from "./user/pages/InterviewPrep";
 import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
 import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
 /* admin pages */
+import AdminDashboard from "./admin/pages/AdminDashboard";
 import AdminApprove from "./user/pages/AdminApprove";
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
 
         {/* admin pages */}
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/admin-approve" element={<AdminApprove />} />
 
       </Routes>
