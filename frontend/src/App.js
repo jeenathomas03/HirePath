@@ -9,6 +9,7 @@ import Profile from "./user/pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ResumeBuilder from "./user/pages/ResumeBuilder";
 import InterviewPrep from "./user/pages/InterviewPrep";
+import AdminApprove from "./user/pages/AdminApprove";
 
 
 function App() {
