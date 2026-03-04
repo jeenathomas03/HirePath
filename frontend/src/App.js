@@ -10,9 +10,11 @@ import InterviewPrep from "./user/pages/InterviewPrep";
 /* admin pages */
 import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
 import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
+import RecruiterHome from "./pages/RecruiterHome";
+
 /* admin pages */
 import AdminDashboard from "./admin/pages/AdminDashboard";
-import AdminApprove from "./user/pages/AdminApprove";
+import AdminApprove from "./admin/pages/AdminApprove";
 
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
         {/* Recruiter Pages */ }
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
+        <Route path="/recruiter-home" element={<RecruiterHome />} />
 
         {/* admin pages */}
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
