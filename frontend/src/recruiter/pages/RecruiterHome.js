@@ -1,5 +1,6 @@
 import React from "react";
 import "./RecruiterHome.css";
+import RecruiterNavbar from "../../components/RecruiterNavbar";
 
 function RecruiterHome() {
   const jobs = [
@@ -9,8 +10,10 @@ function RecruiterHome() {
   ];
 
   return (
+  
     <div className="recruiter-home">
       <header className="recruiter-header">
+      <RecruiterNavbar/>
         <h1>Recruiter Dashboard</h1>
         <p>Manage jobs and track applicants easily</p>
       </header>
