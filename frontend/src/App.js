@@ -10,7 +10,7 @@ import InterviewPrep from "./user/pages/InterviewPrep";
 /* admin pages */
 import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
 import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
-import RecruiterHome from "./pages/RecruiterHome";
+import RecruiterHome from "./recruiter/pages/RecruiterHome";
 
 /* admin pages */
 import AdminDashboard from "./admin/pages/AdminDashboard";
