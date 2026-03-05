@@ -1,0 +1,27 @@
+.recruiter-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f172a;
+    padding: 15px 50px;
+}
+
+.logo h2{
+    color: white;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-links li a:hover{
+    color: #38bdf8;
+}
