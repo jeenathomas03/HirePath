@@ -1,6 +1,7 @@
 import React from "react";
 import "./RecruiterHome.css";
 import RecruiterNavbar from "../../components/RecruiterNavbar";
+import Footer from "../../components/Footer";
 
 function RecruiterHome() {
   const jobs = [
@@ -66,6 +67,7 @@ function RecruiterHome() {
         <button className="post-job-btn">Post New Job</button>
         <button className="manage-btn">Manage Applicants</button>
       </div>
+      <Footer />
     </div>
   );
 }
