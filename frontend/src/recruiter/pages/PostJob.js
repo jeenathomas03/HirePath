@@ -90,7 +90,7 @@ function PostJob() {
         </form>
 
       </div>
-      <Footer />
+      
     </>
   );
 }

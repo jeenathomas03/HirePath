@@ -1,0 +1,48 @@
+.admin-navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0f172a;
+    color:white;
+    padding:10px 30px;
+}
+
+.admin-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+}
+
+.admin-logo img{
+    height:40px;
+}
+
+.admin-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.admin-links li{
+    cursor:pointer;
+}
+
+.admin-links li:hover{
+    color:#38bdf8;
+}
+
+.admin-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-right button{
+    padding:6px 12px;
+    border:none;
+    background:#ef4444;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}

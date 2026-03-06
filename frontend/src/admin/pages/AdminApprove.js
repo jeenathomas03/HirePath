@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminApprove.css";
+import Navbar from "../../components/Navbar";
 
 function AdminApprove() {
   const [pendingItems, setPendingItems] = useState([]);
@@ -51,6 +52,7 @@ function AdminApprove() {
 
   return (
     <div className="admin-approve-container">
+      <Navbar/>
       <h1>Admin Approval Panel</h1>
 
       {pendingItems.length === 0 ? (
