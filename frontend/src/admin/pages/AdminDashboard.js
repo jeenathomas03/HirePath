@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./AdminDashboard.css";
+import Navbar from "../../components/Navbar";
 
 function AdminDashboard() {
   const [stats, setStats] = useState({
@@ -33,6 +34,7 @@ function AdminDashboard() {
 
   return (
     <div className="admin-dashboard">
+      <Navbar />
       <h1>Admin Dashboard</h1>
 
       {/* Statistics */}
