@@ -16,10 +16,12 @@ mongoose.connect("mongodb://127.0.0.1:27017/hirepath")
 
 // routes
 const authRoutes = require("./routes/authRoutes");
-const recruiterRoutes = require("./routes/recruiterRoutes"); // ADD THIS
+const recruiterRoutes = require("./routes/recruiterRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 app.use("/api/auth", authRoutes);
-app.use("/api/recruiter", recruiterRoutes); // recruiter routes
+app.use("/api/recruiter", recruiterRoutes);
+app.use("/api/admin", adminRoutes);
 
 // server
 app.listen(5000, () => {

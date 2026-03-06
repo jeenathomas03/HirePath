@@ -9,9 +9,10 @@ const recruiterSchema = new mongoose.Schema({
   website: String,
   address: String,
   password: String,
+
   status: {
     type: String,
-    default: "pending"
+    default: "pending" // pending | approved | rejected
   }
 });
 
