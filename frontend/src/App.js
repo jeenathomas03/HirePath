@@ -14,6 +14,7 @@ import RecruiterHome from "./recruiter/pages/RecruiterHome";
 import PostJob from "./recruiter/pages/PostJob";
 
 /* admin pages */
+import AdminLogin from "./admin/pages/AdminLogin";
 import AdminDashboard from "./admin/pages/AdminDashboard";
 import AdminApprove from "./admin/pages/AdminApprove";
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/recruiter/post-job" element={<PostJob />} />
 
         {/* admin pages */}
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/admin-approve" element={<AdminApprove />} />
 
