@@ -12,6 +12,8 @@ import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
 import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
 import RecruiterHome from "./recruiter/pages/RecruiterHome";
 import PostJob from "./recruiter/pages/PostJob";
+import RecruiterStatus from "./recruiter/pages/RecruiterStatus";
+
 
 /* admin pages */
 import AdminLogin from "./admin/pages/AdminLogin";
@@ -39,6 +41,7 @@ function App() {
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
         <Route path="/recruiter-home" element={<RecruiterHome />} />
         <Route path="/recruiter/post-job" element={<PostJob />} />
+        <Route path="/recruiter/status" element={<RecruiterStatus />} />
 
         {/* admin pages */}
         <Route path="/admin" element={<AdminLogin />} />

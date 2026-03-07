@@ -1,0 +1,19 @@
+.status-container{
+    text-align:center;
+    margin-top:100px;
+  }
+  
+  .pending{
+    color:orange;
+    font-size:20px;
+  }
+  
+  .approved{
+    color:green;
+    font-size:20px;
+  }
+  
+  .rejected{
+    color:red;
+    font-size:20px;
+  }
