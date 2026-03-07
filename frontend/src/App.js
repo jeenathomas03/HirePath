@@ -39,7 +39,6 @@ function App() {
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
 
         {/* Recruiter Pages */ }
-        
         <Route path="/recruiter" element={<RecruiterIndex />} />
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
@@ -47,7 +46,6 @@ function App() {
         <Route path="/recruiter-home" element={<RecruiterHome />} />
         <Route path="/recruiter/post-job" element={<PostJob />} />
         
-
         {/* admin pages */}
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
