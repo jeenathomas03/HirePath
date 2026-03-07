@@ -1,0 +1,63 @@
+.recruiter-navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#1e293b;
+    color:white;
+  }
+  
+  .logo{
+    font-size:22px;
+    font-weight:bold;
+  }
+  
+  .nav-buttons button{
+    margin-left:10px;
+    padding:8px 16px;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+  }
+  .status-btn{
+    background:#f59e0b;
+    color:white;
+  }
+  
+  .login-btn{
+    background:#38bdf8;
+    color:white;
+  }
+  
+  .register-btn{
+    background:#22c55e;
+    color:white;
+  }
+  
+  .hero-section{
+    text-align:center;
+    margin-top:120px;
+    padding:20px;
+  }
+  
+  .hero-section h1{
+    font-size:40px;
+    margin-bottom:20px;
+  }
+  
+  .hero-section p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+    margin-bottom:15px;
+  }
+  
+  .start-btn{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+  }

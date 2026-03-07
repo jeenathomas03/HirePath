@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+/* user pages */
 import Index from "./user/pages/Index";
 import Register from "./user/pages/Register";
 import Login from "./user/pages/Login";
@@ -7,13 +8,14 @@ import Profile from "./user/pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ResumeBuilder from "./user/pages/ResumeBuilder";
 import InterviewPrep from "./user/pages/InterviewPrep";
-/* admin pages */
+
+/* recruiter pages */
+import RecruiterIndex from "./recruiter/pages/RecruiterIndex";
 import RecruiterRegister from "./recruiter/pages/RecruiterRegister";
 import RecruiterLogin from "./recruiter/pages/RecruiterLogin";
+import RecruiterStatus from "./recruiter/pages/RecruiterStatus";
 import RecruiterHome from "./recruiter/pages/RecruiterHome";
 import PostJob from "./recruiter/pages/PostJob";
-import RecruiterStatus from "./recruiter/pages/RecruiterStatus";
-
 
 /* admin pages */
 import AdminLogin from "./admin/pages/AdminLogin";
@@ -37,11 +39,14 @@ function App() {
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
 
         {/* Recruiter Pages */ }
+        
+        <Route path="/recruiter" element={<RecruiterIndex />} />
         <Route path="/recruiter/register" element={<RecruiterRegister />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
+        <Route path="/recruiter/status" element={<RecruiterStatus />} />
         <Route path="/recruiter-home" element={<RecruiterHome />} />
         <Route path="/recruiter/post-job" element={<PostJob />} />
-        <Route path="/recruiter/status" element={<RecruiterStatus />} />
+        
 
         {/* admin pages */}
         <Route path="/admin" element={<AdminLogin />} />
