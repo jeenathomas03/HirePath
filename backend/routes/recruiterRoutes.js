@@ -30,4 +30,22 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.get("/status/:email", async (req, res) => {
+  try {
+    const recruiter = await Recruiter.findOne({ email: req.params.email });
+
+    if (!recruiter) {
+      return res.status(404).json({ message: "Recruiter not found" });
+    }
+
+    res.json({
+      status: recruiter.status,
+      companyName: recruiter.companyName
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching status" });
+  }
+});
+
 module.exports = router;
