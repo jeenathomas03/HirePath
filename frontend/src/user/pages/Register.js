@@ -26,20 +26,33 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     setError("");
-
-    if (formData.password !== formData.confirmPassword) {
+  
+    const { password, confirmPassword } = formData;
+  
+    // Password match check
+    if (password !== confirmPassword) {
       return setError("Passwords do not match");
     }
-
+  
+    // Strong password regex
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  
+    if (!passwordRegex.test(password)) {
+      return setError(
+        "Password must be at least 8 characters and include uppercase, lowercase, number, and special character"
+      );
+    }
+  
     setLoading(true);
-
+  
     try {
       await axios.post("http://localhost:5000/api/auth/register", {
         name: formData.name,
         email: formData.email,
         password: formData.password,
       });
-
+  
       alert("Registration successful!");
       navigate("/login");
     } catch (error) {
