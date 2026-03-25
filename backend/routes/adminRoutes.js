@@ -4,24 +4,28 @@ const router = express.Router();
 const Admin = require("../models/Admin");
 const Recruiter = require("../models/Recruiter");
 const bcrypt = require("bcryptjs");
+const mongoose = require("mongoose");
 
 
 // ===============================
-// 📌 ADMIN LOGIN (SECURE)
+// 📌 HELPER: VALIDATE OBJECT ID
+// ===============================
+const isValidId = (id) => mongoose.Types.ObjectId.isValid(id);
+
+
+// ===============================
+// 📌 ADMIN LOGIN
 // ===============================
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
     const admin = await Admin.findOne({ email });
-
     if (!admin) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    // ✅ Compare hashed password
     const isMatch = await bcrypt.compare(password, admin.password);
-
     if (!isMatch) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
@@ -46,7 +50,8 @@ router.post("/login", async (req, res) => {
 // ===============================
 router.get("/pending", async (req, res) => {
   try {
-    const recruiters = await Recruiter.find({ status: "pending" }).sort({ createdAt: -1 });
+    const recruiters = await Recruiter.find({ status: "pending" })
+      .sort({ createdAt: -1 });
 
     res.json(recruiters);
 
@@ -62,7 +67,8 @@ router.get("/pending", async (req, res) => {
 // ===============================
 router.get("/recruiters", async (req, res) => {
   try {
-    const recruiters = await Recruiter.find().sort({ createdAt: -1 });
+    const recruiters = await Recruiter.find()
+      .sort({ createdAt: -1 });
 
     res.json(recruiters);
 
@@ -74,83 +80,60 @@ router.get("/recruiters", async (req, res) => {
 
 
 // ===============================
+// 📌 UPDATE STATUS (COMMON FUNCTION)
+// ===============================
+const updateStatus = async (req, res, newStatus) => {
+  try {
+    const { id } = req.params;
+
+    // ✅ Fix for your error
+    if (!isValidId(id)) {
+      return res.status(400).json({ message: "Invalid recruiter ID" });
+    }
+
+    const recruiter = await Recruiter.findByIdAndUpdate(
+      id,
+      { status: newStatus },
+      { new: true }
+    );
+
+    if (!recruiter) {
+      return res.status(404).json({ message: "Recruiter not found" });
+    }
+
+    res.json({
+      message: `Recruiter ${newStatus}`,
+      recruiter,
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error updating recruiter status" });
+  }
+};
+
+
+// ===============================
 // 📌 MARK AS VIEWED
 // ===============================
-router.put("/view/:id", async (req, res) => {
-  try {
-    const recruiter = await Recruiter.findByIdAndUpdate(
-      req.params.id,
-      { status: "viewed" },
-      { new: true }
-    );
-
-    if (!recruiter) {
-      return res.status(404).json({ message: "Recruiter not found" });
-    }
-
-    res.json({
-      message: "Recruiter marked as viewed",
-      recruiter,
-    });
-
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error updating status" });
-  }
+router.put("/view/:id", (req, res) => {
+  updateStatus(req, res, "viewed");
 });
 
 
 // ===============================
-// 📌 APPROVE RECRUITER
+// 📌 APPROVE
 // ===============================
-router.put("/approve/:id", async (req, res) => {
-  try {
-    const recruiter = await Recruiter.findByIdAndUpdate(
-      req.params.id,
-      { status: "approved" },
-      { new: true }
-    );
-
-    if (!recruiter) {
-      return res.status(404).json({ message: "Recruiter not found" });
-    }
-
-    res.json({
-      message: "Recruiter approved successfully",
-      recruiter,
-    });
-
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error approving recruiter" });
-  }
+router.put("/approve/:id", (req, res) => {
+  updateStatus(req, res, "approved");
 });
 
 
 // ===============================
-// 📌 REJECT RECRUITER
+// 📌 REJECT
 // ===============================
-router.put("/reject/:id", async (req, res) => {
-  try {
-    const recruiter = await Recruiter.findByIdAndUpdate(
-      req.params.id,
-      { status: "rejected" },
-      { new: true }
-    );
-
-    if (!recruiter) {
-      return res.status(404).json({ message: "Recruiter not found" });
-    }
-
-    res.json({
-      message: "Recruiter rejected",
-      recruiter,
-    });
-
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error rejecting recruiter" });
-  }
+router.put("/reject/:id", (req, res) => {
+  updateStatus(req, res, "rejected");
 });
 
 
