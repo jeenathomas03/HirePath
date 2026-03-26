@@ -6,11 +6,15 @@ const Recruiter = require("../models/Recruiter");
 
 
 // Admin Login
+const bcrypt = require("bcryptjs");
+
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const admin = await Admin.findOne({ email });
+    const admin = await Admin.findOne({
+      email: email.trim().toLowerCase()
+    });
 
     if (!admin) {
       return res.status(400).json({ message: "Invalid credentials" });
@@ -26,15 +30,15 @@ router.post("/login", async (req, res) => {
       message: "Login successful",
       admin: {
         id: admin._id,
-        email: admin.email,
-      },
+        email: admin.email
+      }
     });
 
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Server error" });
   }
 });
-
 
 // Get Pending Recruiters
 router.get("/pending", async (req, res) => {
