@@ -41,9 +41,8 @@ function RecruiterIndex() {
         <h1>Hire Smarter with HirePath 🚀</h1>
 
         <p>
-          A powerful platform designed for recruiters to connect with the best
-          talent. Post jobs, manage applications, and streamline your hiring
-          process — all in one place.
+          A powerful platform designed for recruiters to connect with top talent,
+          manage applications, and streamline hiring effortlessly.
         </p>
 
         <button
@@ -66,17 +65,17 @@ function RecruiterIndex() {
 
           <div className="feature-card">
             <h3>👥 Manage Candidates</h3>
-            <p>Track applications and shortlist candidates easily.</p>
+            <p>Track and shortlist candidates easily.</p>
           </div>
 
           <div className="feature-card">
             <h3>⚡ Fast Hiring</h3>
-            <p>Speed up your hiring process with smart tools.</p>
+            <p>Speed up hiring with smart tools.</p>
           </div>
         </div>
       </div>
 
-      {/* Approval Process Section */}
+      {/* Process Section */}
       <div className="process-section">
         <h2>Recruiter Approval Process</h2>
 
@@ -84,25 +83,25 @@ function RecruiterIndex() {
           <div className="process-step">
             <span>1</span>
             <h4>Register</h4>
-            <p>Submit your company details.</p>
+            <p>Submit company details</p>
           </div>
 
           <div className="process-step">
             <span>2</span>
             <h4>Sent to Admin</h4>
-            <p>Your request is sent for admin review.</p>
+            <p>Request goes for review</p>
           </div>
 
           <div className="process-step">
             <span>3</span>
             <h4>Admin Viewed</h4>
-            <p>Admin checks your company details.</p>
+            <p>Admin verifies details</p>
           </div>
 
           <div className="process-step">
             <span>4</span>
             <h4>Approved / Rejected</h4>
-            <p>Get approval or feedback instantly.</p>
+            <p>Final decision shared</p>
           </div>
         </div>
 
