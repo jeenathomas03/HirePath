@@ -37,24 +37,35 @@ function RecruiterIndex() {
       </nav>
 
       {/* Hero Section */}
-      <div className="hero-section">
-        <h1>Hire Smarter with HirePath 🚀</h1>
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1>Hire Smarter with HirePath 🚀</h1>
 
-        <p>
-          A powerful platform designed for recruiters to connect with top talent,
-          manage applications, and streamline hiring effortlessly.
-        </p>
+          <p>
+            Connect with top talent, manage candidates efficiently, and
+            accelerate your hiring process with our smart recruitment platform.
+          </p>
 
-        <button
-          className="start-btn"
-          onClick={() => navigate("/recruiter/register")}
-        >
-          Get Started
-        </button>
-      </div>
+          <div className="hero-buttons">
+            <button
+              className="start-btn"
+              onClick={() => navigate("/recruiter/register")}
+            >
+              Get Started
+            </button>
+
+            <button
+              className="outline-btn"
+              onClick={() => navigate("/recruiter/status")}
+            >
+              Track Status
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
-      <div className="features-section">
+      <section className="features-section">
         <h2>Why Choose HirePath?</h2>
 
         <div className="features-container">
@@ -64,19 +75,19 @@ function RecruiterIndex() {
           </div>
 
           <div className="feature-card">
-            <h3>👥 Manage Candidates</h3>
-            <p>Track and shortlist candidates easily.</p>
+            <h3>👥 Smart Candidate Tracking</h3>
+            <p>Shortlist and manage applicants with ease.</p>
           </div>
 
           <div className="feature-card">
-            <h3>⚡ Fast Hiring</h3>
-            <p>Speed up hiring with smart tools.</p>
+            <h3>⚡ Faster Hiring</h3>
+            <p>Speed up your hiring workflow with automation.</p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Process Section */}
-      <div className="process-section">
+      <section className="process-section">
         <h2>Recruiter Approval Process</h2>
 
         <div className="process-container">
@@ -89,13 +100,13 @@ function RecruiterIndex() {
           <div className="process-step">
             <span>2</span>
             <h4>Sent to Admin</h4>
-            <p>Request goes for review</p>
+            <p>Request sent for review</p>
           </div>
 
           <div className="process-step">
             <span>3</span>
             <h4>Admin Viewed</h4>
-            <p>Admin verifies details</p>
+            <p>Details are verified</p>
           </div>
 
           <div className="process-step">
@@ -104,14 +115,20 @@ function RecruiterIndex() {
             <p>Final decision shared</p>
           </div>
         </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <h2>Start Hiring Today</h2>
+        <p>Join HirePath and simplify your recruitment process.</p>
 
         <button
-          className="track-btn"
-          onClick={() => navigate("/recruiter/status")}
+          className="cta-btn"
+          onClick={() => navigate("/recruiter/register")}
         >
-          Track Your Status
+          Create Recruiter Account
         </button>
-      </div>
+      </section>
 
       {/* Footer */}
       <footer className="footer">
