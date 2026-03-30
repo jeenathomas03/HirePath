@@ -1,25 +1,99 @@
+/* Page Background */
 .profile-page {
-    text-align: center;
-    padding: 40px;
-  }
-  
+  min-height: 80vh;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.profile-page h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Card Container */
+.profile-view,
+.profile-form {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* View Mode Text */
+.profile-view p {
+  font-size: 15px;
+  margin: 10px 0;
+  color: #444;
+}
+
+.profile-view strong {
+  color: #222;
+}
+
+/* Buttons */
+.profile-view button,
+.profile-form button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Primary Button */
+.profile-view button,
+.profile-form button[type="submit"] {
+  background: #4CAF50;
+  color: white;
+}
+
+.profile-view button:hover,
+.profile-form button[type="submit"]:hover {
+  background: #45a049;
+}
+
+/* Cancel Button */
+.profile-form button[type="button"] {
+  background: #f44336;
+  color: white;
+  margin-left: 10px;
+}
+
+.profile-form button[type="button"]:hover {
+  background: #d32f2f;
+}
+
+/* Form Inputs */
+.profile-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Input Focus Effect */
+.profile-form input:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-view,
   .profile-form {
-    width: 400px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    padding: 20px;
   }
-  
-  .profile-form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .profile-form button {
-    padding: 12px;
-    background: #157a58;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+}
