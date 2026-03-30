@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -6,6 +6,123 @@ import "./Profile.css";
 
 function Profile() {
   const user = JSON.parse(localStorage.getItem("user"));
+  const token = localStorage.getItem("token");
+
+  const [profile, setProfile] = useState({
+    name: user?.name || "",
+    email: user?.email || "",
+    phone: "",
+    location: "",
+    skills: "",
+    experience: "",
+    education: "",
+  });
+
+  const handleChange = (e) => {
+    setProfile({
+      ...profile,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post(
+        "http://localhost:5000/api/auth/profile",
+        profile,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      alert("Profile saved successfully!");
+    } catch (error) {
+      console.log(error);
+      alert("Error saving profile");
+    }
+  };
+
+  return (
+    <div>
+      <Navbar />
+
+      <div className="profile-page">
+        <h2>Complete Your Profile</h2>
+
+        <form onSubmit={handleSubmit} className="profile-form">
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={profile.name}
+            onChange={handleChange}
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={profile.email}
+            disabled
+          />
+
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            onChange={handleChange}
+          />
+
+          <input
+            type="text"
+            name="location"
+            placeholder="Location"
+            onChange={handleChange}
+          />
+
+          <input
+            type="text"
+            name="skills"
+            placeholder="Skills (React, Node, Java)"
+            onChange={handleChange}
+          />
+
+          <input
+            type="text"
+            name="experience"
+            placeholder="Experience (Fresher / 2 years)"
+            onChange={handleChange}
+          />
+
+          <input
+            type="text"
+            name="education"
+            placeholder="Education"
+            onChange={handleChange}
+          />
+
+          <button type="submit">Save Profile</button>
+
+        </form>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}
+
+export default Profile;import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import "./Profile.css";
+
+function Profile() {
   const token = localStorage.getItem("token");
 
   const [profile, setProfile] = useState({
@@ -20,7 +137,7 @@ function Profile() {
 
   const [editMode, setEditMode] = useState(false);
 
-  // ✅ Fetch profile from backend
+  // ✅ Fetch Profile
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -39,7 +156,7 @@ function Profile() {
     fetchProfile();
   }, [token]);
 
-  // Handle change
+  // Handle input
   const handleChange = (e) => {
     setProfile({
       ...profile,
@@ -56,13 +173,11 @@ function Profile() {
         "http://localhost:5000/api/auth/profile",
         profile,
         {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
 
-      alert("Profile updated!");
+      alert("Profile updated successfully!");
       setEditMode(false);
     } catch (error) {
       console.log(error);
@@ -75,26 +190,59 @@ function Profile() {
       <Navbar />
 
       <div className="profile-page">
-        <h2>My Profile</h2>
 
         {!editMode ? (
-          // ✅ VIEW MODE
-          <div className="profile-view">
-            <p><strong>Name:</strong> {profile.name}</p>
-            <p><strong>Email:</strong> {profile.email}</p>
-            <p><strong>Phone:</strong> {profile.phone}</p>
-            <p><strong>Location:</strong> {profile.location}</p>
-            <p><strong>Skills:</strong> {profile.skills}</p>
-            <p><strong>Experience:</strong> {profile.experience}</p>
-            <p><strong>Education:</strong> {profile.education}</p>
+          <div className="profile-container">
 
-            <button onClick={() => setEditMode(true)}>
-              Edit Profile
-            </button>
+            {/* HEADER */}
+            <div className="profile-header">
+              <div>
+                <h2>{profile.name || "Your Name"}</h2>
+                <p>{profile.email || "email@example.com"}</p>
+              </div>
+              <button onClick={() => setEditMode(true)}>
+                Edit Profile
+              </button>
+            </div>
+
+            {/* BASIC DETAILS */}
+            <div className="profile-card">
+              <h3>Basic Details</h3>
+              <p><strong>Phone:</strong> {profile.phone || "Not added"}</p>
+              <p><strong>Location:</strong> {profile.location || "Not added"}</p>
+            </div>
+
+            {/* SKILLS */}
+            <div className="profile-card">
+              <h3>Skills</h3>
+              <div className="skills-container">
+                {profile.skills
+                  ? profile.skills.split(",").map((skill, index) => (
+                      <span key={index} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))
+                  : "No skills added"}
+              </div>
+            </div>
+
+            {/* EXPERIENCE */}
+            <div className="profile-card">
+              <h3>Experience</h3>
+              <p>{profile.experience || "Not added"}</p>
+            </div>
+
+            {/* EDUCATION */}
+            <div className="profile-card">
+              <h3>Education</h3>
+              <p>{profile.education || "Not added"}</p>
+            </div>
+
           </div>
         ) : (
-          // ✅ EDIT MODE
-          <form onSubmit={handleSubmit} className="profile-form">
+          // ✅ EDIT FORM
+          <form className="profile-form" onSubmit={handleSubmit}>
+            <h2>Edit Profile</h2>
 
             <input
               type="text"
@@ -132,7 +280,7 @@ function Profile() {
               name="skills"
               value={profile.skills}
               onChange={handleChange}
-              placeholder="Skills"
+              placeholder="Skills (comma separated)"
             />
 
             <input
@@ -151,13 +299,15 @@ function Profile() {
               placeholder="Education"
             />
 
-            <button type="submit">Save</button>
-            <button type="button" onClick={() => setEditMode(false)}>
-              Cancel
-            </button>
-
+            <div className="form-buttons">
+              <button type="submit">Save</button>
+              <button type="button" onClick={() => setEditMode(false)}>
+                Cancel
+              </button>
+            </div>
           </form>
         )}
+
       </div>
 
       <Footer />
