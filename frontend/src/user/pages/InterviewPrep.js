@@ -23,17 +23,32 @@ const questionsData = [
       {
         question: "What is useEffect?",
         answer:
-          "useEffect is a React Hook used to perform side effects like API calls, subscriptions, or DOM updates."
+          "useEffect is used to handle side effects like API calls and DOM updates."
       },
       {
         question: "Difference between props and state?",
         answer:
-          "Props are read-only and passed from parent to child, while state is managed within the component and can change."
+          "Props are read-only and passed from parent, while state is managed inside the component."
       },
       {
         question: "What is JSX?",
         answer:
-          "JSX is a syntax extension that allows writing HTML inside JavaScript."
+          "JSX allows writing HTML inside JavaScript."
+      },
+      {
+        question: "What is controlled component?",
+        answer:
+          "A controlled component is a form element whose value is controlled by React state."
+      },
+      {
+        question: "What is lifting state up?",
+        answer:
+          "Moving state to a common parent component to share data between child components."
+      },
+      {
+        question: "What is React Router?",
+        answer:
+          "React Router is used for navigation between different pages in a React app."
       }
     ]
   },
@@ -48,27 +63,42 @@ const questionsData = [
       {
         question: "What is Express.js?",
         answer:
-          "Express.js is a framework for Node.js used to build APIs and web applications."
+          "Express.js is a backend framework used to build APIs and web applications."
       },
       {
         question: "What is REST API?",
         answer:
-          "REST API is an architectural style for designing networked applications using HTTP methods."
+          "REST API is a way to communicate between client and server using HTTP methods."
       },
       {
         question: "What is Middleware?",
         answer:
-          "Middleware functions are functions that execute during the request-response cycle in Express."
+          "Middleware functions run during request-response cycle in Express."
       },
       {
         question: "What is JWT?",
         answer:
-          "JWT (JSON Web Token) is used for authentication and securely transmitting information between client and server."
+          "JWT is used for authentication and secure data transfer."
       },
       {
         question: "Difference between SQL and NoSQL?",
         answer:
-          "SQL databases are structured and use tables, while NoSQL databases are flexible and use documents, key-value pairs, etc."
+          "SQL uses tables and structured data, NoSQL uses flexible document-based storage."
+      },
+      {
+        question: "What is event loop?",
+        answer:
+          "Event loop handles asynchronous operations in Node.js."
+      },
+      {
+        question: "What is nodemon?",
+        answer:
+          "Nodemon automatically restarts the server when code changes."
+      },
+      {
+        question: "What is CORS?",
+        answer:
+          "CORS allows or restricts resources from different domains."
       }
     ]
   },
@@ -78,22 +108,57 @@ const questionsData = [
       {
         question: "What is MongoDB?",
         answer:
-          "MongoDB is a NoSQL database that stores data in JSON-like documents."
+          "MongoDB is a NoSQL database that stores data in JSON-like format."
       },
       {
         question: "What is Mongoose?",
         answer:
-          "Mongoose is an ODM library for MongoDB used in Node.js to define schemas and models."
+          "Mongoose is an ODM used to interact with MongoDB in Node.js."
       },
       {
         question: "What is a Schema?",
         answer:
-          "A schema defines the structure of documents in a MongoDB collection."
+          "Schema defines structure of data in MongoDB."
       },
       {
         question: "What is indexing?",
         answer:
-          "Indexing improves the speed of data retrieval operations in a database."
+          "Indexing improves database query performance."
+      },
+      {
+        question: "What is aggregation?",
+        answer:
+          "Aggregation is used to process and analyze data in MongoDB."
+      },
+      {
+        question: "What is populate in Mongoose?",
+        answer:
+          "Populate is used to replace a field with actual data from another collection."
+      }
+    ]
+  },
+  {
+    category: "Projects & Practical",
+    questions: [
+      {
+        question: "Explain your project (CineStream).",
+        answer:
+          "CineStream is an OTT platform where users can watch movies, manage watchlist, and admins can manage content."
+      },
+      {
+        question: "How did you handle authentication?",
+        answer:
+          "Used JWT for secure login and protected routes."
+      },
+      {
+        question: "How do you connect frontend and backend?",
+        answer:
+          "Using APIs with axios or fetch."
+      },
+      {
+        question: "How do you handle errors?",
+        answer:
+          "Using try-catch and proper error responses."
       }
     ]
   },
@@ -103,27 +168,32 @@ const questionsData = [
       {
         question: "Tell me about yourself.",
         answer:
-          "I am a Full Stack Developer with MERN stack knowledge and experience building web applications."
+          "I am a Full Stack Developer skilled in MERN stack with hands-on project experience."
       },
       {
         question: "What are your strengths?",
         answer:
-          "My strengths include problem solving, quick learning, and building scalable applications."
+          "Problem solving, quick learning, and adaptability."
       },
       {
         question: "What are your weaknesses?",
         answer:
-          "I sometimes focus too much on details, but I am improving by managing time effectively."
+          "I focus too much on details but improving time management."
       },
       {
         question: "Why should we hire you?",
         answer:
-          "I am a quick learner, passionate developer, and I have hands-on experience in MERN stack projects."
+          "I have practical experience and strong willingness to learn."
       },
       {
         question: "Where do you see yourself in 5 years?",
         answer:
-          "I see myself as a skilled full stack developer contributing to impactful projects and growing professionally."
+          "Growing as a skilled full stack developer."
+      },
+      {
+        question: "Are you willing to relocate?",
+        answer:
+          "Yes, I am open to relocation."
       }
     ]
   }
